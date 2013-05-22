@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>CURN-generated RSS feed</title>
+</head>
+
+<body>
+	<h1>CURN-generated RSS feed</h1>
+	<hr/>
+	<h2>Feeds</h2>
+		<div style="background-color: #ddd">
+			<ul>
+				{{#feeds}}
+					<li><a href="{{feed.URL}}">{{channel.title}}</a></li>
+				{{/feeds}}
+			</ul>
+		</div>
+	<hr/>
+	<div style="page-break-after:always;">&nbsp;</div>
+
+	{{#feeds}}
+		<h1><a href="{{feed.URL}}">{{channel.title}}</a></h1>
+
+		{{#channel.items}}
+			<h3 id="toc_{{#hashcode}}{{ParentChannel.URL}}{{title}}{{/hashcode}}" name="toc_{{#hashcode}}{{ParentChannel.URL}}{{title}}{{/hashcode}}"><a href="{{URL}}">{{title}}</a></h3>
+			<p>
+				{{{summary}}}
+			</p>
+		{{/channel.items}}
+	{{/feeds}}
+</body>
+</html>
