@@ -126,7 +126,7 @@ public class MustacheZipperPlugin implements OutputHandler {
                 }
             };
             
-            name = "KoboOutputPlugin";
+            name = "MustacheZipperPlugin";
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MustacheZipperPlugin.class.getName()).log(Level.SEVERE, null, ex);
             throw new CurnException(ex);
@@ -251,7 +251,7 @@ public class MustacheZipperPlugin implements OutputHandler {
 
     @Override
     public String getContentType() {
-        return "application/x-kobo-epub"; //TODO: proper mimetype
+        return "application/x-kobo-epub"; //TODO: proper mimetype; make it configurable...s
     }
 
     @Override
